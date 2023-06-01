@@ -5,14 +5,14 @@ import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types.{IntegerType, LongType, StructType}
 
-object PopularMoviesDataset {
+object MoviesDataset {
   final case class Movie(movieID: Int)
 
   def main(args: Array[String]) {
     Logger.getLogger("org").setLevel(Level.ERROR)
     val spark = SparkSession
       .builder
-      .appName("PopularMovies")
+      .appName("Movies")
       .master("local[*]")
       .getOrCreate()
 

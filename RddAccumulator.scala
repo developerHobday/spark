@@ -8,7 +8,7 @@ import scala.collection.mutable.ArrayBuffer
 
 /** Finds the degrees of separation between two characters in a graph
  */
-object BreadFirstSearch {
+object RddAccumulator {
   
   val startCharacterID = 5306 //SpiderMan
   val targetCharacterID = 14 //ADAM 3,031 (who?)

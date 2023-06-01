@@ -4,7 +4,7 @@ import org.apache.spark._
 import org.apache.log4j._
 
 /** Find the node with the most links. */
-object Graph {
+object Rdd {
   
   // Function to extract the node and number of connections from each line
   def countConnections(line: String): (Int, Int) = {
@@ -14,7 +14,7 @@ object Graph {
  
   def main(args: Array[String]) {
     Logger.getLogger("org").setLevel(Level.ERROR)
-    val sc = new SparkContext("local[*]", "MostPopularSuperhero")    
+    val sc = new SparkContext("local[*]", "Rdd")    
     val lines = sc.textFile("data/graph.txt")
     
     val pairings = lines.map(countConnections)

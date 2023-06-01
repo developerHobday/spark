@@ -5,14 +5,14 @@ import org.apache.log4j._
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
 
-object MaxTemperaturesDataset {
+object TemperatureDataset {
   case class Temperature(stationID: String, date: Int, measure_type: String, temperature: Float)
 
   def main(args: Array[String]) {
     Logger.getLogger("org").setLevel(Level.ERROR)
     val spark = SparkSession
       .builder
-      .appName("MinTemperatures")
+      .appName("Temperature")
       .master("local[*]")
       .getOrCreate()
 

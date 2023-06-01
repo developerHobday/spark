@@ -3,7 +3,7 @@ package com.hobday
 import org.apache.spark.sql._
 import org.apache.log4j._
     
-object Dataset {  
+object PeopleDataset {  
   case class Person(id:Int, name:String, age:Int, friends:Int)
 
   def main(args: Array[String]) {    
@@ -18,7 +18,7 @@ object Dataset {
     val ds = spark.read
       .option("header", "true")
       .option("inferSchema", "true")
-      .csv("data/friends.csv")
+      .csv("data/people.csv")
       .as[Person]
 
     ds.printSchema()
